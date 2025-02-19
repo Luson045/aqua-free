@@ -1,0 +1,139 @@
+/* Import modern sans-serif font */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary-blue: #2563eb;
+    --secondary-blue: #60a5fa;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --background: #ffffff;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-primary);
+    background-color: var(--background);
+}
+
+/* Typography */
+h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+p.lead {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+p.subtle {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.275rem 0.75rem;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    padding: 6rem 0;
+    background: linear-gradient(
+        135deg,
+        rgba(37, 99, 235, 0.05),
+        rgba(96, 165, 250, 0.05)
+    );
+}
+
+@media (max-width: 768px) {
+  h1 {
+      font-size: 2.5rem;
+  }
+  
+  h2 {
+      font-size: 1.75rem;
+  }
+  
+  p {
+      font-size: 1rem;
+      line-height: 1.7;
+  }
+  
+  p.lead {
+      font-size: 1.125rem;
+  }
+  
+  .hero {
+      padding: 4rem 0;
+  }
+}
+@keyframes appearFromBelow {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-appear {
+  animation: appearFromBelow 0.7s forwards ease-out;
+}
+
+.invisible-until-animated {
+  opacity: 0;
+}
+
+/* Optional: Add transition for smoother effect */
+.animate-from-below {
+  transition: opacity 0.7s, transform 0.7s;
+}
