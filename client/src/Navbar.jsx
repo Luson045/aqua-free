@@ -1,4 +1,3 @@
-// components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Waves, Menu,X } from 'lucide-react';
@@ -13,22 +12,22 @@ const Navbar = ({ scrolled, activeSection, scrollToSection }) => {
           <div className="flex justify-between h-16 items-center">
             <div className={`flex-shrink-0 font-bold text-2xl transition-colors duration-300 ${scrolled ? 'text-blue-600' : 'text-white'}`}>
               <Waves className="inline-block mr-2" />
-              AquaFree
+              AquaForFree
             </div>
             <div className="hidden md:flex space-x-8">
-              {['home', 'mission', 'vision', 'sponsor', 'contact'].map((section) => (
+              {[{name:'home',link:"home"},{name:'sponsor',link:"sponsor"}, {name: 'contact',link:"contact"}, {name:'distributors',link:'/distributors'}].map((section) => (
                 <Link
-                to={`/${section}`}>
+                to={`/${section.link}`}>
                   <div
-                  key={section}
-                  onClick={() => scrollToSection(section)}
+                  key={section.name}
+                  onClick={() => scrollToSection(section.name)}
                   className={`cursor-pointer font-bold transition-all duration-300 ${
                     activeSection === section
                       ? scrolled ? 'text-blue-600 scale-105' : 'text-white scale-105'
                       : scrolled ? 'text-gray-700 hover:text-blue-600' : 'text-gray-200 hover:text-white'
                   }`}
                 >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                  {section.name.charAt(0).toUpperCase() + section.name.slice(1)}
                   </div>
                 </Link>
               ))}
@@ -50,14 +49,14 @@ const Navbar = ({ scrolled, activeSection, scrollToSection }) => {
         <div className="p-4">
           <div className="mb-8 font-bold text-2xl text-blue-600 mb-4">
             <Waves className="inline-block mr-2" />
-            AquaFree
+            AquaForFree
           </div>
           <div className="space-y-4">
-            {[{name:'home',link:"home"}, {name:'mission',link:"home#mission"}, {name: 'vision',link:"home#vision"}, {name:'sponsor',link:"sponsor"}, {name: 'contact',link:"contact"}].map((section) => (
+            {[{name:'home',link:"home"},{name:'sponsor',link:"sponsor"}, {name: 'contact',link:"contact"}, {name:'distributors',link:'/distributors'}].map((section) => (
               <>
               <Link
                 to={`/${section.link}`}
-                key={section}
+                key={section.name}
                 onClick={() => {
                   scrollToSection(section.name);
                   setIsOpen(false);

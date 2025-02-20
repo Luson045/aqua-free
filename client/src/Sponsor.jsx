@@ -14,7 +14,7 @@ const SponsorshipPage = () => {
 
     // Three.js setup
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x1e3a8a); // Darker blue for better contrast
+    scene.background = new THREE.Color(0x1e3a8a);
 
     const camera = new THREE.PerspectiveCamera(75, modelRef.current.clientWidth / modelRef.current.clientHeight, 0.1, 1000);
     camera.position.z = 5;
@@ -23,29 +23,20 @@ const SponsorshipPage = () => {
     renderer.setSize(modelRef.current.clientWidth, modelRef.current.clientHeight);
     renderer.setClearColor(0x000000, 0);
     modelRef.current.appendChild(renderer.domElement);
-
-    // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
-
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
     directionalLight.position.set(0, 10, 5);
     scene.add(directionalLight);
-
-    // Controls
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableZoom = false;
     controls.autoRotate = true;
     controls.autoRotateSpeed = 2;
-
-    // Load water bottle model
     const loader = new GLTFLoader();
     loader.load('water_bottle_free.glb', (gltf) => {
       const bottleObject = gltf.scene;
       bottleObject.scale.set(8.5, 8.5, 8.5);
       scene.add(bottleObject);
-
-      // Add a brand logo plane
       const brandTexture = new THREE.TextureLoader().load('/api/placeholder/200/80');
       const brandMaterial = new THREE.MeshBasicMaterial({
         map: brandTexture,
@@ -60,15 +51,11 @@ const SponsorshipPage = () => {
 
       animate();
     });
-
-    // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
       controls.update();
       renderer.render(scene, camera);
     };
-
-    // Handle window resize
     const handleResize = () => {
       if (!modelRef.current) return;
       camera.aspect = modelRef.current.clientWidth / modelRef.current.clientHeight;
@@ -91,8 +78,6 @@ const SponsorshipPage = () => {
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
   };
-
-  // Data
   const benefits = [
     { icon: <Globe className="w-12 h-12 text-blue-400" />, title: "Global Visibility", description: "Your brand featured on bottles distributed worldwide, gaining exposure to our international audience." },
     { icon: <Users className="w-12 h-12 text-blue-400" />, title: "Community Impact", description: "Associate your brand with positive social change and commitment to clean water accessibility." },
@@ -170,15 +155,12 @@ const SponsorshipPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500 text-white overflow-hidden relative">
-      {/* Lightweight Gradient Animation */}
       <div className="absolute inset-0 bg-gradient-animation z-0"></div>
-
-      {/* Hero Section */}
       <section className="mt-32 pb-32 px-4 container mx-auto relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Sponsor Clean Water, Build Your Brand</h1>
           <p className="text-lg md:text-xl opacity-90 mb-10">
-            Partner with AquaFree to showcase your brand on our innovative water bottles while helping make clean drinking water accessible worldwide.
+            Partner with AquaForFree to showcase your brand on our innovative water bottles while helping make clean drinking water accessible worldwide.
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-4">
             <a href="#bottle" className="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all shadow-lg flex items-center justify-center">
@@ -190,8 +172,6 @@ const SponsorshipPage = () => {
           </div>
         </div>
       </section>
-
-      {/* 3D Bottle Model Section */}
       <section id="bottle" className="py-20 bg-blue-900 bg-opacity-30 backdrop-blur-lg relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -203,7 +183,6 @@ const SponsorshipPage = () => {
 
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="h-96 bg-gradient-to-b from-blue-800 to-blue-600 rounded-xl overflow-hidden shadow-2xl" ref={modelRef}>
-              {/* 3D model will be rendered here */}
             </div>
 
             <div className="space-y-6">
@@ -254,13 +233,11 @@ const SponsorshipPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Benefits Section */}
       <section id="benefits" className="py-20 container mx-auto px-4 relative z-10 animate-from-below">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Sponsorship Benefits</h2>
           <p className="text-lg md:text-xl opacity-80 max-w-2xl mx-auto">
-            Partner with AquaFree and gain more than just brand visibility. Join our mission while achieving your marketing goals.
+            Partner with AquaForFree and gain more than just brand visibility. Join our mission while achieving your marketing goals.
           </p>
         </div>
 
@@ -279,7 +256,6 @@ const SponsorshipPage = () => {
           ))}
         </div>
       </section>
-      {/* Pricing Section */}
       <section id="pricing" className="py-20 bg-blue-900 bg-opacity-30 backdrop-blur-lg relative z-10  animate-from-below">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -345,7 +321,7 @@ const SponsorshipPage = () => {
   <div className="text-center mb-16">
     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Our Distributors</h2>
     <p className="text-lg md:text-xl opacity-80 max-w-2xl mx-auto text-white">
-      AquaFree partners with leading organizations to distribute sponsored water bottles worldwide.
+      AquaForFree partners with leading organizations to distribute sponsored water bottles worldwide.
     </p>
   </div>
 
@@ -395,8 +371,6 @@ const SponsorshipPage = () => {
     </div>
   </div>
 </section> */}
-
-{/* FAQ Section */}
 <section id="faq" className="py-20 bg-gradient-to-b from-blue-900 to-blue-950 relative z-10 animate-from-below">
   <div className="container mx-auto px-4">
     <div className="text-center mb-16">
@@ -443,7 +417,6 @@ const SponsorshipPage = () => {
     </div>
   </div>
 </section>
-      {/* CTA Section */}
       <section className="py-20 container mx-auto px-4 relative z-10 animate-from-below">
         <div className="bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Make an Impact?</h2>

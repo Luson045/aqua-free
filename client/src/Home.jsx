@@ -4,12 +4,10 @@ import { Mail, Phone, Instagram, Twitter, Linkedin,  ArrowUpRight, Droplets, Hea
 import './App.css';
 
 const Home = () => {
-  // Keeping all the existing state and effects
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [animatedCount, setAnimatedCount] = useState(false);
 
-  // Existing data
   const sponsors = [
     { name: 'water.org', logo: './sponsor1.png' },
     { name: 'charity:water', logo: './sponsor2.jpg' },
@@ -25,10 +23,7 @@ const Home = () => {
     { name: "H2O Outreach", region: "Africa", bottles: "20,000", image: "./location.jpeg" },
     { name: "Pure Source Network", region: "South America", bottles: "15,000", image: "./location.jpeg" },
   ];
-
   const duplicatedSponsors = [...sponsors, ...sponsors];
-
-  // Keeping the existing useEffect and helper functions
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -92,7 +87,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
       <div id="home" className="relative h-screen overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400">
           <div className="absolute inset-0 opacity-30">
@@ -137,14 +131,12 @@ const Home = () => {
       </div>
 
       <section className="relative py-24 bg-gradient-to-br from-blue-50 via-white to-blue-50">
-      {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute h-64 w-64 -top-32 -left-32 bg-blue-200 rounded-full mix-blend-multiply opacity-10 animate-float" />
         <div className="absolute h-64 w-64 -bottom-32 -right-32 bg-purple-200 rounded-full mix-blend-multiply opacity-10 animate-float-delayed" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="mt-16 text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent inline-block">
           Why Your Brand Matters
@@ -153,8 +145,6 @@ const Home = () => {
             Transform your marketing into meaningful impact with purpose-driven advertising
           </p>
         </div>
-
-        {/* Main Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
@@ -198,14 +188,10 @@ const Home = () => {
               key={index}
               className="group relative"
             >
-              {/* Elevated Card */}
               <div className="relative bg-white rounded-2xl shadow-lg p-8 h-full transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
-                {/* Icon Container */}
                 <div className="w-16 h-16 mb-6 rounded-full flex items-center justify-center">
                   {card.icon}
                 </div>
-                
-                {/* Content */}
                 <h3 className={`text-2xl font-bold mb-2 bg-gradient-to-r ${card.gradient} bg-clip-text text-transparent`}>
                   {card.title}
                 </h3>
@@ -215,8 +201,6 @@ const Home = () => {
                 <p className="text-gray-600 leading-relaxed">
                   {card.description}
                 </p>
-                
-                {/* Hover Effect Line */}
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-2xl" 
                      style={{
                        backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`,
@@ -229,18 +213,13 @@ const Home = () => {
         </div>
       </div>
     </section>
-
-      {/* Who We Are Section - Keeping existing */}
       <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white to-blue-50">
-      {/* Decorative water ripple effect */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-300/20 via-transparent to-transparent animate-pulse" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main content */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left column with text */}
           <div className="space-y-8">
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
               Who We Are
@@ -248,8 +227,6 @@ const Home = () => {
             <p className="text-xl leading-relaxed text-gray-600">
               We're revolutionizing advertising by turning water bottles into powerful marketing channels while making a positive impact on the world. Every bottle tells a story of innovation, sustainability, and social responsibility.
             </p>
-            
-            {/* Stats section */}
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="border border-blue-200 rounded-lg p-4 bg-blue-50 shadow-sm">
                 <p className="text-3xl font-bold text-blue-600">₹10</p>
@@ -261,8 +238,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-
-          {/* Right column with cards */}
           <div className="relative">
             <div className="grid gap-6">
               {[
@@ -303,14 +278,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        {/* Bottom wave decoration */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-blue-50/50 to-transparent" />
       </div>
     </section>
     <section className="relative overflow-hidden bg-gradient-to-r from-blue-50 to-white">
       <div className="mx-auto">
-        {/* Header */}
         <div className="text-center mb-16 md:mb-24">
           <h2 className="mt-16 text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent inline-block">
             Our Mission
@@ -319,8 +291,6 @@ const Home = () => {
             Creating a world where clean water is a right, not a privilege
           </p>
         </div>
-
-        {/* Mission Items */}
         <div className="space-y-20 md:space-y-32">
           {[
             {
@@ -347,7 +317,6 @@ const Home = () => {
           ].map((item, index) => (
             <div key={index} className="relative">
               <div className={`flex flex-col lg:grid lg:grid-cols-12 items-center`}>
-                {/* Image Container */}
                 <div className={`w-full lg:col-span-5 flex ${
                   item.align === 'left' ? 'lg:order-last lg:justify-start' : 'lg:justify-end'
                 } justify-center`}>
@@ -359,11 +328,7 @@ const Home = () => {
                     />
                   </div>
                 </div>
-
-                {/* Spacer */}
                 <div className="lg:col-span-2" />
-
-                {/* Content Container */}
                 <div className={`w-full lg:col-span-5 text-center ${
                   item.align === 'left' ? 'lg:text-right lg:order-first' : 'lg:text-left'
                 }`}>
@@ -386,8 +351,6 @@ const Home = () => {
             </div>
           ))}
         </div>
-
-        {/* Call to action */}
         <div className="mt-20 md:mt-32 text-center">
           <button className="group inline-flex items-center gap-2 bg-blue-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-blue-700 transition-colors text-base md:text-lg font-semibold">
             Join Our Mission
@@ -396,7 +359,6 @@ const Home = () => {
         </div>
       </div>
     </section>
-      {/* Impact Counter Section - Keeping existing */}
       <section id="counter" className="bg-gradient-to-br from-blue-50 to-white py-20 animate-from-below">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -421,7 +383,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* How It Works Section */}
       <section id="how-it-works" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -467,8 +428,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Brand Spotlight Section */}
       <section id="brand-spotlight" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -511,8 +470,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Join the Movement Section */}
       <section id="join" className="py-20 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -552,8 +509,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Existing Sponsors Section */}
       <section className="w-full py-16 bg-white">
       <div className="container mx-auto px-4">
       <h2 className="mt-16 text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent text-center">
@@ -562,13 +517,9 @@ const Home = () => {
         <p className="text-center text-gray-600 mb-12">
           Partners in our mission for universal water access
         </p>
-
-        {/* Scrolling Carousel (Both Mobile and Desktop) */}
         <div className="relative overflow-hidden">
           <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-white to-transparent z-10" />
           <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-white to-transparent z-10" />
-          
-          {/* Main scrolling container */}
           <div className="flex overflow-hidden">
             <div className="animate-scroll flex gap-8">
               {duplicatedSponsors.map((sponsor, index) => (
@@ -617,8 +568,6 @@ const Home = () => {
         }
       `}</style>
     </section>
-
-      {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -645,7 +594,7 @@ const Home = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">contact@aquafree.com</p>
+                    <p className="text-gray-600">contact@aquaforfree.com</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -703,10 +652,6 @@ const Home = () => {
       </div>
   );
 };
-
-// Add missing imports
-
-// Keep existing styles
 const style = document.createElement('style');
 style.textContent = `
   @keyframes float {

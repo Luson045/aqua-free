@@ -3,7 +3,6 @@ import {Facebook, Twitter, Linkedin,Instagram} from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="relative bg-gradient-to-b from-blue-800 to-blue-600 text-white pt-32 pb-16 overflow-hidden">
-      {/* Background Waves */}
       <div className="absolute top-0 left-0 w-full transform -translate-y-1/2">
         <svg className="w-full h-32 md:h-48" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -13,18 +12,13 @@ const Footer = () => {
           ></path>
         </svg>
       </div>
-
-      {/* Content Section */}
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-24 text-center space-y-8">
-        {/* Logo & Tagline */}
         <div className="space-y-6">
           <h2 className="text-5xl font-bold tracking-wide text-white/90">Because Water is for Everyone</h2>
           <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
             Sustaining communities through clean water initiatives. Join us in creating a future where clean water is accessible to all.
           </p>
         </div>
-
-        {/* Navigation Links */}
         <div className="flex flex-wrap justify-center gap-6 sm:gap-8 mt-8">
           {["Home", "About", "Mission", "Projects", "Contact"].map((link) => (
             <a
@@ -36,8 +30,6 @@ const Footer = () => {
             </a>
           ))}
         </div>
-
-        {/* Social Media Links */}
         <div className="flex justify-center space-x-8 mt-10">
           {[<Facebook/>,<Twitter/>,<Instagram/>,<Linkedin/>].map((platform) => (
             <a

@@ -1,4 +1,3 @@
-// pages/Contact.jsx
 import React, { useState } from 'react';
 import { 
   Mail, 
@@ -36,10 +35,8 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
-      {/* Hero Section */}
       <div className="relative bg-blue-600 text-white py-20 overflow-hidden">
         <div className="absolute inset-0 bg-blue-600 opacity-90">
-          {/* Animated water droplets background */}
           {[...Array(20)].map((_, i) => (
             <div
               key={i}
@@ -63,8 +60,6 @@ const Contact = () => {
           </p>
         </div>
       </div>
-
-      {/* Quick Contact Info */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {[
@@ -77,7 +72,7 @@ const Contact = () => {
             {
               icon: <Mail className="w-6 h-6" />,
               title: "Email Us",
-              info: "contact@aquafree.org",
+              info: "contact@aquaforfree.org",
               subInfo: "We'll respond within 24 hours"
             },
             {
@@ -100,8 +95,6 @@ const Contact = () => {
             </div>
           ))}
         </div>
-
-        {/* Contact Form Section */}
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
@@ -189,8 +182,6 @@ const Contact = () => {
               </button>
             </form>
           </div>
-
-          {/* Additional Information */}
           <div className="space-y-8">
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Office Hours</h3>
